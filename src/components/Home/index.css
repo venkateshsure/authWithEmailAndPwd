@@ -1,0 +1,21 @@
+.home-con{
+    display: flex;
+    width:100%;
+    height:100vh;
+    background-color: #00A7F8;
+}
+
+.fir-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.text-head{
+    color:#ffffff;
+    font-family:'Roboto';
+    font-size:22px;
+
+}
