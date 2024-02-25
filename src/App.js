@@ -1,12 +1,14 @@
-import UserAuth from './UserAuth'
+import UserAuth from './components/UserAuth'
+import Home from './components/Home'
 
 import {  onAuthStateChanged } from "firebase/auth";
 
 import {auth} from './firebase'
 
 
-import Home from './Home'
+
 import {useState,useEffect} from 'react'
+
 import './index.css'
 
 const App=()=>{
@@ -14,7 +16,7 @@ const App=()=>{
   useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user.email,user.uid)
+      // console.log(user.email,user.uid)
       setPresentUser({uid:user.id,email:user.email})
     }
     else{
