@@ -13,6 +13,7 @@ const UserAuth=()=>{
     const [number,setNumber]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
+    const [error,setError]=useState("")
 
     const onChangeName=e=>{
         setName(e.target.value)
@@ -32,6 +33,10 @@ const UserAuth=()=>{
     
     const signUp=(e)=>{
         e.preventDefault()
+        if (!name || !number || !email || !password) {
+            setError("Please fill in all fields.");
+            return;
+        }
         createUserWithEmailAndPassword(auth,email,password)
         .then(userCredential=>{
             const user = userCredential.user;
@@ -47,12 +52,16 @@ const UserAuth=()=>{
 
     const signIn=(e)=>{
         e.preventDefault()
+        if (!name || !number || !email || !password) {
+            setError("Please fill all the  fields.");
+            return;
+        }
         signInWithEmailAndPassword(auth,email,password)
         .then(userCredential=>{
             const user = userCredential.user;
             console.log(user)
         })
-        .catch(err=>console.log(err))
+        .catch(err=>setError("Please enter valid credentials"))
     }
 
     return (
@@ -69,6 +78,7 @@ const UserAuth=()=>{
                     <input type="number" placeholder="Phone" value={number} className="input-background" onChange={onChangeNumber}/>
                     <input type="email" placeholder="Email" value={email} className="input-background" onChange={onChangeMail}/>
                     <input type="password" placeholder="Password" value={password} className="input-background" onChange={onChangePassword}/>
+                    {error && <p className="error">{error}</p>}
                    <div className='button-con'>
                         <button className="btn" onClick={signIn}>Sign In</button>
                         <button className="btn" onClick={signUp}>Sign Up</button>

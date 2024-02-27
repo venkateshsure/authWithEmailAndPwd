@@ -25,6 +25,13 @@ const App=()=>{
   })
   },[]);
 
+  /* for the user login the credentials are
+  fullname=venky
+  number=12345
+  email=user1@gmail.com
+  password=123456 
+  */
+
 
 return (
     <div>

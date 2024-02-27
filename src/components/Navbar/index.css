@@ -1,0 +1,11 @@
+.large-menu-classname {
+    /* Styles for the large menu (e.g., for desktop) */
+    background-color: #333; /* Example background color */
+    padding: 20px; /* Example padding */
+}
+
+.small-menu-classname {
+    /* Styles for the small menu (e.g., for mobile) */
+    background-color: #222; /* Example background color */
+    padding: 10px; /* Example padding */
+}

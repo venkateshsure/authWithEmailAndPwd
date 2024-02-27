@@ -10,6 +10,11 @@
     width:278px;
 }
 
+.error{
+    color:red;
+    font-size:30px;
+    font-family: 'Roboto';
+}
 
 
 .form-con{
